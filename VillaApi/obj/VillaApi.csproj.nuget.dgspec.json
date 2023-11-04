@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer08\\Desktop\\gg\\VillaApi\\VillaApi\\VillaApi.csproj": {}
+    "C:\\Users\\Acer08\\Desktop\\VillaApi\\VillaApi\\VillaApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Acer08\\Desktop\\gg\\VillaApi\\VillaApi\\VillaApi.csproj": {
+    "C:\\Users\\Acer08\\Desktop\\VillaApi\\VillaApi\\VillaApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer08\\Desktop\\gg\\VillaApi\\VillaApi\\VillaApi.csproj",
+        "projectUniqueName": "C:\\Users\\Acer08\\Desktop\\VillaApi\\VillaApi\\VillaApi.csproj",
         "projectName": "VillaApi",
-        "projectPath": "C:\\Users\\Acer08\\Desktop\\gg\\VillaApi\\VillaApi\\VillaApi.csproj",
+        "projectPath": "C:\\Users\\Acer08\\Desktop\\VillaApi\\VillaApi\\VillaApi.csproj",
         "packagesPath": "C:\\Users\\Acer08\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer08\\Desktop\\gg\\VillaApi\\VillaApi\\obj\\",
+        "outputPath": "C:\\Users\\Acer08\\Desktop\\VillaApi\\VillaApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer08\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,13 +52,19 @@
               "target": "Package",
               "version": "[7.0.13, )"
             },
-            "Serilog.AspNetCore": {
+            "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.13, )"
             },
-            "Serilog.Sinks.File": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
