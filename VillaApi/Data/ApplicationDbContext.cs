@@ -8,6 +8,7 @@ namespace VillaApi.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<Villa> Villas { get; set; }
 
+        public DbSet<Driver> Drivers { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Villa>().HasData(

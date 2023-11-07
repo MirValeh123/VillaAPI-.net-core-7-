@@ -4,6 +4,9 @@ using VillaApi.Models;
 using VillaApi.Data;
 using Microsoft.AspNetCore.JsonPatch;
 using VillaApi.Logging;
+using Microsoft.AspNetCore.Identity;
+
+using VillaApi.Exceptions;
 
 namespace VillaApi.Controllers
 {
@@ -38,8 +41,12 @@ namespace VillaApi.Controllers
         public ActionResult<IEnumerable<Villa>> GetVillas()
         {
             //_logger.LogInformation("Getting All Villas");
-            _logger.Log("Getting All Villas", "INFo");
-            
+            _logger.Log("Getting All Villas", "INFO");
+            var villas = _context.Villas.ToList();
+            if (villas == null)
+            {
+                throw new NotFoundException("data not found");
+            }
             return Ok(_context.Villas.ToList());
         }
 
@@ -52,14 +59,16 @@ namespace VillaApi.Controllers
 
             if (id == 0)
             {
-                //_logger.LogError("Get Villa Error with Id" + "=" + id);
                 _logger.Log("Get Villa Error with Id" + "=" + id,"error");
-                return BadRequest();
+                throw new BadRequestException("request is failed");
+
+
+                
             }
             var villa = _context.Villas.FirstOrDefault(x => x.Id == id);
             if (villa == null)
             {
-                return NotFound();
+                throw new NotFoundException("data not found");
 
             }
             return Ok(villa);

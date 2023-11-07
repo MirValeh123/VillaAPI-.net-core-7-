@@ -2,6 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using VillaApi.Data;
 using VillaApi.Logging;
+using VillaApi.Root.Configurations;
+using VillaApi.Services.Implementation;
+using VillaApi.Services.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +22,7 @@ builder.Services.AddControllers(option =>
 {
     //option.ReturnHttpNotAcceptable=true;
 }).AddNewtonsoftJson().AddXmlDataContractSerializerFormatters();
+builder.Services.AddScoped<IDriverService, DriverService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -32,7 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.AddGlobalErrorHandler();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
